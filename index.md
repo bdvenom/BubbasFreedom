@@ -1,4 +1,5 @@
 
+<script type="text/javascript">
 function countdown(endDate) {
   let years, months, weeks, days, hours, minutes, seconds;
   
@@ -53,4 +54,3 @@ function countdown(endDate) {
 (function () { 
   countdown('06/20/2036 02:00:00 PM'); 
 }());
-view rawcountdown.js hosted with ❤ by GitHub
