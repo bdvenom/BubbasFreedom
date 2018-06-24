@@ -39,6 +39,8 @@ CDown.prototype = {
 	format: function(r){
 // Table Format with Digital Readout
 var out = "<table cellspacing=0 cellpadding=0 border=0 class=cdTimer>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"YEAR":"YEARS")+"</td>";	
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"WEEK":"WEEKS")+"</td>";	
 out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"DAY":"DAYS")+"</td>";
 out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"HR":"HRS")+"</td>";
 out += "<td align=center class='cdTimerTitle cdTimerVLine'>MIN</td>";
