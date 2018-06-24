@@ -39,7 +39,7 @@ CDown.prototype = {
 		var pre='',post='',divide=', ',
 			out="";
 		out += pre+r.y +" "+((r.y==1)?"year":"years")+post+divide;
-		out += pre+r.m +" "+((r.m==1)?"month":"months")+post+divide;
+		out += pre+r.mt +" "+((r.mt==1)?"month":"months")+post+divide;
 		out += pre+r.w +" "+((r.w==1)?"week":"weeks")+post+divide;
 		out += pre+r.d +" "+((r.d==1)?"day":"days")+post+divide;
 		out += pre+r.h +" "+((r.h==1)?"hour":"hours")+post+divide;
@@ -49,7 +49,7 @@ CDown.prototype = {
 		return out.substr(0,out.length-divide.length);
 	},
 	math: function(work){
-		var	y=m=w=d=h=m=s=ms=0;
+		var	y=mt=w=d=h=m=s=ms=0;
 
 		ms=(""+((work%1000)+1000)).substr(1,3);
 		work=Math.floor(work/1000);//kill the "milliseconds" so just secs
@@ -57,7 +57,7 @@ CDown.prototype = {
 		y=Math.floor(work/31536000);//years (no leapyear support)
 		work=work%31536000;
 		
-		m=Math.floor(work/2628000);//months 
+		mt=Math.floor(work/2628000);//months 
 		work=work%2628000;
 
 		w=Math.floor(work/604800);//weeks
@@ -74,7 +74,7 @@ CDown.prototype = {
 
 		s=Math.floor(work);//seconds
 
-		return {y:y,m:m,w:w,d:d,h:h,m:m,s:s,ms:ms};
+		return {y:y,mt:mt,w:w,d:d,h:h,m:m,s:s,ms:ms};
 	},
 	tick: function(){
 		var now=(new Date()).getTime(),
