@@ -122,7 +122,7 @@ window.onload=function(){
 
 var CDown = function() {
 	this.state=0;// if initialized
-	this.counts=[];// array holding countdown date objects and id to print to {d:new Date(2013,11,18,18,54,36), id:"countbox1"}
+	this.counts=[];// array holding countdown date objects and id to print to {d:new Date(2013,11,18,18,54,36), id:"countbox2"}
 	this.interval=null;// setInterval object
 }
 
@@ -218,5 +218,6 @@ CDown.prototype = {
 window.onload=function(){
 	var cdown = new CDown();
 
-	cdown.add(new Date(2036,5,15,14,00,00), "countbox1");
+	cdown.add(new Date(2036,5,15,14,00,00), "countbox2");
 };
+<div id="countbox2" style="font:26pt Impact; color:#000000; text-align:center;"></div>
