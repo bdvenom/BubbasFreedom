@@ -39,18 +39,18 @@ CDown.prototype = {
 	format: function(r){
 // Table Format with Digital Readout
 var out = "<table cellspacing=0 cellpadding=15 border=0 class=cdTimer align=center>";
-out += "<tr align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"YEAR":"YEARS")+"</tr>";	
-out += "<tr align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"WEEK":"WEEKS")+"</tr>";	
-out += "<tr align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"DAY":"DAYS")+"</tr>";
-out += "<tr align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"HR":"HRS")+"</tr>";
-out += "<tr align=center class='cdTimerTitle cdTimerVLine'>MIN</tr>";
-out += "<tr align=center class='cdTimerTitle'>SEC</tr><tr>";
-out += "<tr align=center class='cdTimerDigit cdTimerVLine'>"+ r.y +"</tr>";	
-out += "<tr align=center class='cdTimerDigit cdTimerVLine'>"+ r.w +"</tr>";	
-out += "<tr align=center class='cdTimerDigit cdTimerVLine'>"+ r.d +"</tr>";
-out += "<tr align=center class='cdTimerDigit cdTimerVLine'>"+ r.h +"</tr>";
-out += "<tr align=center class='cdTimerDigit cdTimerVLine'>"+ r.m +"</tr>";
-out += "<tr align=center class='cdTimerDigit'>"+ r.s +"</tr></table>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"YEAR":"YEARS")+"</td>";	
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"WEEK":"WEEKS")+"</td>";	
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"DAY":"DAYS")+"</td>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"HR":"HRS")+"</td>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>MIN</td>";
+out += "<td align=center class='cdTimerTitle'>SEC</td><td>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.y +"</td>";	
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.w +"</td>";	
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.d +"</td>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.h +"</td>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.m +"</td>";
+out += "<td align=center class='cdTimerDigit'>"+ r.s +"</td></table>";
 
 return out.substr(0,out.length-2);
 },
