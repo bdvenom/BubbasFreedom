@@ -2,7 +2,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width">
-	<h1 style="font-size:150%; font-family:times new roman; font-color:#000000;text-align:center;">Bubba will reagain his freedom in:</h1>
+	<h1 style="font-size:150%; font-family:times new roman; font-color:#000000;text-align:center;">Bubba will regain his freedom in:</h1>
 	
 	
 </head>
