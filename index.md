@@ -105,4 +105,4 @@ window.onload=function(){
 	cdown.add(new Date(2036,5,20,14,00,00), "countbox1");
 };
 </script>
-<div id="countbox1" style="font:36pt Times New Roman; color:#000000;"></div>
+<div id="countbox1" style="font:36pt Impact; color:#000000;"></div>
