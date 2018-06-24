@@ -7,9 +7,9 @@
 	
 </head>
 
-//##################
+// ##################
 // Full Countdown ##
-//##################
+// ##################
 <script type="text/javascript">
 
 
@@ -117,9 +117,9 @@ window.onload=function(){
 <div id="countbox1" style="font:26pt Impact; color:#000000; text-align:center;"></div>
 
 
-//##################
+// ##################
 // Days Countdown ##
-//##################
+// ##################
 <script type="text/javascript">
 
 
