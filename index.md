@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<h1 style="font-size=:48; font-family:times new roman; font-color:#000000;">Bubba's Freedom</h1>
+	<h1 style="font-size=:72; font-family:times new roman; font-color:#000000;">Bubba's Freedom</h1>
 	<p>Bubba will reagain his freedom in:</p>
 	
 </head>
