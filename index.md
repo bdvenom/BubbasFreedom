@@ -38,6 +38,8 @@ CDown.prototype = {
 	},
 	format: function(r){
 var out="";
+if(r.y != 0){out += r.y +" "+((r.y==1)?"year":"years")+", ";}
+if(r.w != 0){out += r.w +" "+((r.w==1)?"week":"weeks")+", ";}
 if(r.d != 0){out += r.d +" "+((r.d==1)?"day":"days")+", ";}
 if(r.h != 0){out += r.h +" "+((r.h==1)?"hour":"hours")+", ";}
                 out += r.m +" "+((r.m==1)?"min":"mins")+", ";
