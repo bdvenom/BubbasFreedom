@@ -6,7 +6,6 @@
 	
 	
 </head>
-
 // ##################
 // Full Countdown ##
 // ##################
@@ -115,8 +114,6 @@ window.onload=function(){
 };
 </script>
 <div id="countbox1" style="font:26pt Impact; color:#000000; text-align:center;"></div>
-
-
 // ##################
 // Days Countdown ##
 // ##################
