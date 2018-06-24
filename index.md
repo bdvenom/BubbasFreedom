@@ -57,8 +57,8 @@ CDown.prototype = {
 		y=Math.floor(work/31536000);//years (no leapyear support)
 		work=work%31536000;
 		
-		m=Math.floor(work/2629746);//months 
-		work=work%2629746;
+		m=Math.floor(work/2628000);//months 
+		work=work%2628000;
 
 		w=Math.floor(work/604800);//weeks
 		work=work%604800;
