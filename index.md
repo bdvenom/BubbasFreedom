@@ -6,12 +6,12 @@
 	
 	
 </head>
+
+//##################
+// Full Countdown ##
+//##################
 <script type="text/javascript">
-//###################################################################
-// Author: ricocheting.com
-// Version: v3.1
-// Date: 2017-01-03
-// Description: displays the amount of time until the "dateFuture" entered below.
+
 
 var CDown = function() {
 	this.state=0;// if initialized
