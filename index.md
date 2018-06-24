@@ -37,15 +37,17 @@ CDown.prototype = {
 		}
 	},
 	format: function(r){
-var out="";
-if(r.y != 0){out += r.y +" "+((r.y==1)?"year":"years")+", ";}
-if(r.w != 0){out += r.w +" "+((r.w==1)?"week":"weeks")+", ";}
-if(r.d != 0){out += r.d +" "+((r.d==1)?"day":"days")+", ";}
-if(r.h != 0){out += r.h +" "+((r.h==1)?"hour":"hours")+", ";}
-                out += r.m +" "+((r.m==1)?"min":"mins")+", ";
-out += r.s +" "+((r.s==1)?"sec":"secs")+", ";
-return out.substr(0,out.length-2);
-},
+		var pre='',post='',divide=', ',
+			out="";
+		out += pre+r.y +" "+((r.y==1)?"year":"years")+post+divide;
+		out += pre+r.w +" "+((r.w==1)?"week":"weeks")+post+divide;
+		out += pre+r.d +" "+((r.d==1)?"day":"days")+post+divide;
+		out += pre+r.h +" "+((r.h==1)?"hour":"hours")+post+divide;
+		out += pre+r.m +" "+((r.m==1)?"min":"mins")+post+divide;
+		out += pre+r.s +" "+((r.s==1)?"sec":"secs")+post+divide;
+
+		return out.substr(0,out.length-divide.length);
+	},
 	math: function(work){
 		var	y=w=d=h=m=s=ms=0;
 
@@ -108,4 +110,5 @@ window.onload=function(){
 	cdown.add(new Date(2036,5,20,14,00,00), "countbox1");
 };
 </script>
+<div id="countbox1"></div>
 <div id="countbox1" style="font:36pt Impact; color:#000000; text-align:center;"></div>
