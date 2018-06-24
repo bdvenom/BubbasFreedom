@@ -37,17 +37,19 @@ CDown.prototype = {
 		}
 	},
 	format: function(r){
-		var pre='',post='',divide=', ',
-			out="";
-		out += pre+r.y +" "+((r.y==1)?"year":"years")+post+divide;
-		out += pre+r.w +" "+((r.w==1)?"week":"weeks")+post+divide;
-		if(r.d != 0){out += pre+r.d +" "+((r.d==1)?"day":"days")+post+divide;}
-		if(r.h != 0){out += pre+r.h +" "+((r.h==1)?"hour":"hours")+post+divide;}
-		out += pre+r.m +" "+((r.m==1)?"min":"mins")+post+divide;
-		out += pre+r.s +" "+((r.s==1)?"sec":"secs")+post+divide;
+// Table Format with Digital Readout
+var out = "<table cellspacing=0 cellpadding=0 border=0 class=cdTimer>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"DAY":"DAYS")+"</td>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"HR":"HRS")+"</td>";
+out += "<td align=center class='cdTimerTitle cdTimerVLine'>MIN</td>";
+out += "<td align=center class='cdTimerTitle'>SEC</td><tr>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.d +"</td>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.h +"</td>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.m +"</td>";
+out += "<td align=center class='cdTimerDigit'>"+ r.s +"</td></table>";
 
-		return out.substr(0,out.length-divide.length);
-	},
+return out.substr(0,out.length-2);
+},
 	math: function(work){
 		var	y=w=d=h=m=s=ms=0;
 
