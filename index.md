@@ -45,6 +45,8 @@ out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"DAY":"DA
 out += "<td align=center class='cdTimerTitle cdTimerVLine'>"+((r.d==1)?"HR":"HRS")+"</td>";
 out += "<td align=center class='cdTimerTitle cdTimerVLine'>MIN</td>";
 out += "<td align=center class='cdTimerTitle'>SEC</td><tr>";
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.y +"</td>";	
+out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.w +"</td>";	
 out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.d +"</td>";
 out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.h +"</td>";
 out += "<td align=center class='cdTimerDigit cdTimerVLine'>"+ r.m +"</td>";
