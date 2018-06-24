@@ -1,114 +1,108 @@
 <html>
 
 <head>
- <title>Your Page Name</title>
-<SCRIPT LANGUAGE="JavaScript">
+<script type="text/javascript">
+//###################################################################
+// Author: ricocheting.com
+// Version: v3.1
+// Date: 2017-01-03
+// Description: displays the amount of time until the "dateFuture" entered below.
 
-<!-- 
-
-var Temp2;
-var timerID = null;
-var timerRunning = false;
-function arry() {
-this.length = 12;
-this[0] = 31;
-this[1] = 28;
-this[2] = 31;
-this[3] = 30;
-this[4] = 31;
-this[5] = 30;
-this[6] = 31;
-this[7] = 31;
-this[8] = 30;
-this[9] = 31;
-this[10] = 30;
-this[11] = 31;
-}
-var date = new arry();
-
-function stopclock() {
-if(timerRunning)
-clearTimeout(timerID);
-timerRunning = false;
+var CDown = function() {
+	this.state=0;// if initialized
+	this.counts=[];// array holding countdown date objects and id to print to {d:new Date(2013,11,18,18,54,36), id:"countbox1"}
+	this.interval=null;// setInterval object
 }
 
-function startclock() {
-stopclock();
-showtime();
-}
+CDown.prototype = {
+	init: function(){
+		this.state=1;
+		var self=this;
+		this.interval=window.setInterval(function(){self.tick();}, 1000);
+	},
+	add: function(date,id){
+		this.counts.push({d:date,id:id});
+		this.tick();
+		if(this.state==0) this.init();
+	},
+	expire: function(idxs){
+		for(var x in idxs) {
+			this.display(this.counts[idxs[x]], "Now!");
+			this.counts.splice(idxs[x], 1);
+		}
+	},
+	format: function(r){
+		var pre='',post='',divide=', ',
+			out="";
+		out += pre+r.y +" "+((r.y==1)?"year":"years")+post+divide;
+		out += pre+r.w +" "+((r.w==1)?"week":"weeks")+post+divide;
+		if(r.d != 0){out += pre+r.d +" "+((r.d==1)?"day":"days")+post+divide;}
+		if(r.h != 0){out += pre+r.h +" "+((r.h==1)?"hour":"hours")+post+divide;}
+		out += pre+r.m +" "+((r.m==1)?"min":"mins")+post+divide;
+		out += pre+r.s +" "+((r.s==1)?"sec":"secs")+post+divide;
 
-function showtime() {
-now = new Date();
-var CurMonth = now.getMonth();
-var CurDate = now.getDate();
-var CurYear = now.getFullYear();
-now = null;
-if (20 < CurDate) {
-CurDate -= date[CurMonth]; CurMonth++;
-}
-if (5 < CurMonth) {
-CurMonth -= 12; CurYear++;
-}
+		return out.substr(0,out.length-divide.length);
+	},
+	math: function(work){
+		var	y=w=d=h=m=s=ms=0;
 
-var Yearleft = 2036 - CurYear;
-var Monthleft = 6 - CurMonth;
-var Dateleft = 20 - CurDate;
+		ms=(""+((work%1000)+1000)).substr(1,3);
+		work=Math.floor(work/1000);//kill the "milliseconds" so just secs
 
-document.dateform.a.value = Yearleft;
-document.dateform.b.value = Monthleft;
-document.dateform.c.value = Dateleft;
+		y=Math.floor(work/31536000);//years (no leapyear support)
+		work=work%31536000;
 
-timerID = setTimeout("showtime()",1000);
-timerRunning = true;
-}
+		w=Math.floor(work/604800);//weeks
+		work=work%604800;
 
-// -->
+		d=Math.floor(work/86400);//days
+		work=work%86400;
+
+		h=Math.floor(work/3600);//hours
+		work=work%3600;
+
+		m=Math.floor(work/60);//minutes
+		work=work%60;
+
+		s=Math.floor(work);//seconds
+
+		return {y:y,w:w,d:d,h:h,m:m,s:s,ms:ms};
+	},
+	tick: function(){
+		var now=(new Date()).getTime(),
+			expired=[],cnt=0,amount=0;
+
+		if(this.counts)
+		for(var idx=0,n=this.counts.length; idx<n; ++idx){
+			cnt=this.counts[idx];
+			amount=cnt.d.getTime()-now;//calc milliseconds between dates
+
+			// if time is already past
+			if(amount<0){
+				expired.push(idx);
+			}
+			// date is still good
+			else{
+				this.display(cnt, this.format(this.math(amount)));
+			}
+		}
+
+		// deal with any expired
+		if(expired.length>0) this.expire(expired);
+
+		// if no active counts, stop updating
+		if(this.counts.length==0) window.clearTimeout(this.interval);
+		
+	},
+	display: function(cnt,msg){
+		document.getElementById(cnt.id).innerHTML=msg;
+	}
+};
+
+window.onload=function(){
+	var cdown = new CDown();
+
+	cdown.add(new Date(2036,5,20,14,00,00), "countbox1");
+};
 </script>
-</head>
-<body Onload="startclock();">
-<form name="dateform">
-<!-- This code generated at www.csgnetwork.com/ymdcountdowngen.html. -->
-Only <input type="text" name="a" size="2" value=""> years, 
-<input type="text" name="b" size="2" value=""> months, and 
-<input type="text" name="c" size="2" value=""> days left until 6/20/2020
-</form>
-<!-- The content of your HTML document begins here. --> 
-</head>
-
-<body>
-<!-- Display the countdown timer in an element -->
-<p id="demo"></p>
-
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jun 13, 2036 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get todays date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
-</body>
-
-</html>
+<div id="countbox1"></div>
