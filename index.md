@@ -6,11 +6,11 @@
 	
 	
 </head>
+
+<script type="text/javascript">
 // ##################
 // Full Countdown ##
 // ##################
-<script type="text/javascript">
-
 
 var CDown = function() {
 	this.state=0;// if initialized
@@ -114,11 +114,11 @@ window.onload=function(){
 };
 </script>
 <div id="countbox1" style="font:26pt Impact; color:#000000; text-align:center;"></div>
+
+<script type="text/javascript">
 // ##################
 // Days Countdown ##
 // ##################
-<script type="text/javascript">
-
 
 var CDown = function() {
 	this.state=0;// if initialized
