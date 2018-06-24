@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width">
 	<h1 style="font-size:300%; font-family:impact; font-color:#000000;text-align:center;">Bubba's Freedom</h1>
-	<p style="text-align:center; font-size:300%;">Bubba will reagain his freedom in:</p>
+	<p style="text-align:center;">Bubba will reagain his freedom in:</p>
 	
 </head>
 <script type="text/javascript">
