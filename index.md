@@ -107,7 +107,7 @@ CDown.prototype = {
 window.onload=function(){
 	var cdown = new CDown();
 
-	cdown.add(new Date(2036,5,28,14,00,00), "countbox1");
+	cdown.add(new Date(2036,5,12,14,00,00), "countbox1");
 };
 </script>
 <div id="countbox1" style="font:26pt Impact; color:#000000; text-align:center;"></div>
