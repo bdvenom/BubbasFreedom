@@ -39,11 +39,11 @@ CDown.prototype = {
 	format: function(r){
 		var pre='',post='',divide=', ',
 			out="";
-		out += pre+r.y +" "+((r.y==1)?"year":"years")+post+divide;
-		out += pre+r.w +" "+((r.w==1)?"week":"weeks")+post+divide;
-		out += pre+r.d +" "+((r.d==1)?"day":"days")+post+divide;
-		out += pre+r.h +" "+((r.h==1)?"hour":"hours")+post+divide;
-		out += pre+r.m +" "+((r.m==1)?"min":"mins")+post+divide;
+		out += pre+r.y +" "+((r.y==1)?"year":"years")+post+divide;</ br>
+		out += pre+r.w +" "+((r.w==1)?"week":"weeks")+post+divide;</ br>
+		out += pre+r.d +" "+((r.d==1)?"day":"days")+post+divide;</ br>
+		out += pre+r.h +" "+((r.h==1)?"hour":"hours")+post+divide;</ br>
+		out += pre+r.m +" "+((r.m==1)?"min":"mins")+post+divide;</ br>
 		out += pre+r.s +" "+((r.s==1)?"sec":"secs")+post+divide;
 
 		return out.substr(0,out.length-divide.length);
