@@ -1,8 +1,8 @@
 <html>
 
 <head>
-	<h1 style="font-size:300%; font-family:times new roman; font-color:#000000;">Bubba's Freedom</h1>
-	<p>Bubba will reagain his freedom in:</p>
+	<h1 style="font-size:300%; font-family:impact; font-color:#000000;text-align:center;">Bubba's Freedom</h1>
+	<p style="text-align:center;">Bubba will reagain his freedom in:</p>
 	
 </head>
 <script type="text/javascript">
